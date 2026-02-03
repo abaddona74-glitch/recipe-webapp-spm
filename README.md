@@ -1,37 +1,97 @@
 # Recipe Web App (SPM)
 
-Recipe management application built with Next.js.
+A modern Recipe Management Application built with **Next.js 14**, **Tailwind CSS**, and **TypeScript**. This project allows users to manage their favorite recipes with a simple and intuitive interface.
 
-## Getting Started
+## 🚀 Features
 
-1. Install dependencies:
+- **Browse Recipes**: View a list of all saved recipes.
+- **Create Recipe**: Add new recipes with title, ingredients, and instructions.
+- **Edit Recipe**: Update existing recipes.
+- **Delete Recipe**: Remove recipes you no longer need.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **State/Data**: Server Actions & In-memory mock data (simulating a database)
+
+## 📂 Project Structure
+
+```bash
+├── app/                  # Next.js App Router pages
+│   ├── actions.ts        # Server Actions for CRUD operations
+│   ├── globals.css       # Global styles (Tailwind directives)
+│   ├── layout.tsx        # Root layout configuration
+│   ├── page.tsx          # Landing page
+│   └── recipes/          # Recipe feature routes
+│       ├── page.tsx      # Recipe list view
+│       ├── create/       # Create recipe page
+│       └── [id]/edit/    # Edit recipe page
+├── components/           # Reusable UI components
+│   └── RecipeForm.tsx    # Shared form for creating/editing recipes
+├── lib/                  # Utilities and data simulation
+│   ├── data.ts           # Mock data and helper functions
+│   └── types.ts          # TypeScript interfaces
+├── public/               # Static assets
+└── README.md             # Project documentation
+```
+
+## 🚦 Getting Started
+
+Follow these instructions to set up the project locally.
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/abaddona74-glitch/recipe-webapp-spm.git
+   cd recipe-webapp-spm
+   ```
+
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-2. Run the development server:
+3. **Run the development server**
    ```bash
    npm run dev
    ```
 
-## Folder Structure
+4. **Open the application**
+   Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
 
-- `app/`: App Router pages and layouts
-- `components/`: Reusable UI components
-- `lib/`: Utility functions and configuration
-- `public/`: Static assets
+## 🔄 Workflow & Branching Strategy
 
-## Branching Strategy
+This project follows a structured Git workflow:
 
-We follow a `feature` -> `dev` -> `main` workflow:
+- **`main`**: The production-ready code.
+- **`dev`**: The integration branch where features are merged.
+- **`feature/*`**: Separate branches for each new feature or task.
 
-- **main**: Production-ready code.
-- **dev**: Integration branch for development.
-- **feature/**: Feature branches created from `dev`.
+**Development Process:**
+1. Create a `feature` branch from `dev`.
+2. Implement changes and commit.
+3. Open a Pull Request (PR) to merge into `dev`.
+4. Run CI checks (Build & Lint).
+5. Merge to `dev`.
+6. Periodically merge `dev` to `main` for release.
 
-### Workflow
-1. Create a branch from `dev`: `git checkout -b feature/my-feature dev`
-2. Implement feature.
-3. Open a Pull Request to `dev`.
-4. Merge to `dev` after review.
-5. Create a Pull Request from `dev` to `main` for release.
+## 📸 Screenshots
+
+*(Add screenshots of the application here in `public/screenshots` folder for the final presentation)*
+
+- **Home Page**: Welcome screen.
+- **Recipe List**: Grid view of recipes.
+- **Recipe Form**: Input form for adding/editing.
+
+## 📝 License
+
+This project is licensed under the ISC License.
