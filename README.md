@@ -86,11 +86,19 @@ This project follows a structured Git workflow:
 
 ## 📸 Screenshots
 
-*(Add screenshots of the application here in `public/screenshots` folder for the final presentation)*
+Here is an overview of the SPM (Software Project Management) process, showcasing issue tracking, milestone management, and project workflows:
 
-- **Home Page**: Welcome screen.
-- **Recipe List**: Grid view of recipes.
-- **Recipe Form**: Input form for adding/editing.
+| Issue Tracking | Milestone Management |
+|:---:|:---:|
+| ![Process View 1](public/screenshots/Screenshot%202026-02-04%20130852.png) | ![Process View 2](public/screenshots/Screenshot%202026-02-04%20130931.png) |
+
+| Project Board | Time Management |
+|:---:|:---:|
+| ![Process View 3](public/screenshots/Screenshot%202026-02-04%20131009.png) | ![Process View 4](public/screenshots/Screenshot%202026-02-04%20131107.png) |
+
+| Workflow Details | |
+|:---:|:---:|
+| ![Process View 5](public/screenshots/Screenshot%202026-02-04%20131126.png) | ![Process View 6](public/screenshots/Screenshot%202026-02-04%20131144.png) |
 
 ## 📝 License
 
