@@ -86,11 +86,19 @@ This project follows a structured Git workflow:
 
 ## 📸 Screenshots
 
-*(Add screenshots of the application here in `public/screenshots` folder for the final presentation)*
+Here is a glimpse of the application's interface:
 
-- **Home Page**: Welcome screen.
-- **Recipe List**: Grid view of recipes.
-- **Recipe Form**: Input form for adding/editing.
+| Recipe List | Recipe Details |
+|:---:|:---:|
+| ![Recipe List](public/screenshots/Screenshot%202026-02-04%20130852.png) | ![Recipe Details](public/screenshots/Screenshot%202026-02-04%20130931.png) |
+
+| Create/Edit Form | Mobile/Responsive |
+|:---:|:---:|
+| ![Create Form](public/screenshots/Screenshot%202026-02-04%20131009.png) | ![Mobile View](public/screenshots/Screenshot%202026-02-04%20131107.png) |
+
+| Additional Views | |
+|:---:|:---:|
+| ![View 1](public/screenshots/Screenshot%202026-02-04%20131126.png) | ![View 2](public/screenshots/Screenshot%202026-02-04%20131144.png) |
 
 ## 📝 License
 
