@@ -20,27 +20,44 @@ export default async function RecipesPage() {
         {recipes.map((recipe) => (
           <div
             key={recipe.id}
-            className="border p-4 rounded shadow-sm hover:shadow-md transition bg-white dark:bg-zinc-800"
+            className="border rounded shadow-sm hover:shadow-md transition bg-white dark:bg-zinc-800 overflow-hidden"
           >
-            <h2 className="text-xl font-semibold mb-2">{recipe.title}</h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-2 line-clamp-2">
-              <strong>Ingredients:</strong> {recipe.ingredients}
-            </p>
-            <div className="flex justify-end gap-2 mt-4">
-              <Link
-                href={`/recipes/${recipe.id}/edit`}
-                className="text-blue-500 hover:underline"
-              >
-                Edit
+            {recipe.image && (
+              <Link href={`/recipes/${recipe.id}`}>
+                <img
+                  src={recipe.image}
+                  alt={recipe.title}
+                  className="w-full h-48 object-cover hover:opacity-90 transition-opacity"
+                />
               </Link>
-              <form action={deleteRecipeAction.bind(null, recipe.id)}>
-                <button
-                  type="submit"
-                  className="text-red-500 hover:underline"
+            )}
+            <div className="p-4">
+              <h2 className="text-xl font-semibold mb-2">
+                <Link href={`/recipes/${recipe.id}`} className="hover:underline">
+                  {recipe.title}
+                </Link>
+              </h2>
+              <Link href={`/recipes/${recipe.id}`} className="block group">
+                <p className="text-gray-600 dark:text-gray-300 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                  <strong>Ingredients:</strong> {recipe.ingredients}
+                </p>
+              </Link>
+              <div className="flex justify-end gap-2 mt-4">
+                <Link
+                  href={`/recipes/${recipe.id}/edit`}
+                  className="text-blue-500 hover:underline"
                 >
-                  Delete
-                </button>
-              </form>
+                  Edit
+                </Link>
+                <form action={deleteRecipeAction.bind(null, recipe.id)}>
+                  <button
+                    type="submit"
+                    className="text-red-500 hover:underline"
+                  >
+                    Delete
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         ))}

@@ -16,12 +16,24 @@ export default function RecipeForm({
   const [title, setTitle] = useState(recipe?.title || "");
   const [ingredients, setIngredients] = useState(recipe?.ingredients || "");
   const [instructions, setInstructions] = useState(recipe?.instructions || "");
+  const [image, setImage] = useState(recipe?.image || "");
   const [loading, setLoading] = useState(false);
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImage(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await onSubmit({ title, ingredients, instructions });
+    await onSubmit({ title, ingredients, instructions, image });
     setLoading(false);
     router.push("/recipes");
     router.refresh();
@@ -38,6 +50,20 @@ export default function RecipeForm({
           className="w-full p-2 border rounded text-black"
           required
         />
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-1">Image</label>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleImageChange}
+          className="w-full p-2 border rounded text-black bg-white"
+        />
+        {image && (
+          <div className="mt-2">
+            <img src={image} alt="Preview" className="w-full h-48 object-cover rounded" />
+          </div>
+        )}
       </div>
       <div>
         <label className="block text-sm font-medium mb-1">Ingredients</label>
