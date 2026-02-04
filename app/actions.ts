@@ -8,6 +8,7 @@ export async function createRecipeAction(data: {
   title: string;
   ingredients: string;
   instructions: string;
+  image?: string;
 }) {
   await addRecipe(data);
   revalidatePath("/recipes");
@@ -19,6 +20,7 @@ export async function updateRecipeAction(
     title: string;
     ingredients: string;
     instructions: string;
+    image?: string;
   }
 ) {
   await updateRecipe(id, data);
