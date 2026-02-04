@@ -23,6 +23,7 @@ jobs:
           script: |
             set -e
             cd ${{ secrets.SPM_APP_DIR }}
+            export PORT=${{ secrets.SPM_APP_PORT }}
             git fetch --all
             git reset --hard origin/main
             npm ci --omit=optional
