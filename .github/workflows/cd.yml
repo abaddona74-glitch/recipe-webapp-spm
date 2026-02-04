@@ -23,6 +23,20 @@ jobs:
           script: |
             set -e
             cd ${{ secrets.SPM_APP_DIR }}
+            export PORT=${{ secrets.SPM_APP_PORT }}
+            if command -v nvm >/dev/null 2>&1; then
+              nvm install 20
+              nvm use 20
+            elif [ -s "$HOME/.nvm/nvm.sh" ]; then
+              . "$HOME/.nvm/nvm.sh"
+              nvm install 20
+              nvm use 20
+            else
+              curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+              . "$HOME/.nvm/nvm.sh"
+              nvm install 20
+              nvm use 20
+            fi
             git fetch --all
             git reset --hard origin/main
             npm ci --omit=optional
